@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 class TwitterCard extends React.Component {
   render() {
     let data = this.props.data;
@@ -18,5 +18,9 @@ class TwitterCard extends React.Component {
     );
   }
 }
+
+TwitterCard.propTypes = {
+  data: PropTypes.object,
+};
 
 export default TwitterCard;

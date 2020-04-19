@@ -1,6 +1,7 @@
 import React from "react";
 import socketIOClient from "socket.io-client";
-import TwitterCard from "./TwitterCard";
+import PropTypes from "prop-types";
+import TwitterCard from "./NotificationsCard";
 import { connect } from "react-redux";
 const socket = socketIOClient();
 
@@ -35,7 +36,6 @@ class TwitterList extends React.Component {
   }
 
   render() {
-    console.log(this.props.text, "text");
     const { results } = this.state;
 
     let loading = (
@@ -51,9 +51,7 @@ class TwitterList extends React.Component {
     return (
       <div>
         {counter}
-
         <br />
-
         {results.length > 0
           ? results.map((item, i) => <TwitterCard data={item} key={i} />)
           : loading}
@@ -61,6 +59,10 @@ class TwitterList extends React.Component {
     );
   }
 }
+
+TwitterList.propTypes = {
+  text: PropTypes.string,
+};
 
 const mapStateToProps = (state) => {
   return {

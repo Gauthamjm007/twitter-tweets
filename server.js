@@ -9,11 +9,13 @@ const io = require("socket.io").listen(server);
 const Twitter = require("twitter");
 
 io.set("origins", "*:*");
+
 // server setup
 server.listen(port, () => {
   console.log(`Server running on ${port}`);
 });
 
+//set you twitter key here
 let twitter = new Twitter({
   consumer_key: process.env.consumer_key1,
   consumer_secret: process.env.consumer_secret1,
@@ -24,11 +26,11 @@ let twitter = new Twitter({
 let socketConnection;
 let twitterStream;
 
-app.locals.searchTerm = ""; //Default search term for twitter stream.
+app.locals.searchTerm = ""; //default search term for twitter stream.
 app.locals.showRetweets = false; //Default
 
 /**
- * Resumes twitter stream.
+ * resumes twitter stream.
  */
 const stream = () => {
   console.log(`Searching for ${app.locals.searchTerm}`);
@@ -50,7 +52,7 @@ const stream = () => {
   );
 };
 
-// Establishes socket connection.
+// establishes socket connection
 io.on("connection", (socket) => {
   socketConnection = socket;
   stream();
@@ -58,7 +60,6 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => console.log("Client disconnected"));
 });
 
-//
 io.on("connection", (socket) => {
   socket.on("searchTerm", (searchTerm) => {
     console.log(`Message received: ${searchTerm}`);
@@ -70,7 +71,7 @@ io.on("connection", (socket) => {
 
 /**
  * Emits data from stream.
- * @param {String} msg
+ *
  */
 const sendMessage = (msg) => {
   if (msg.text.includes("RT")) {
@@ -79,11 +80,14 @@ const sendMessage = (msg) => {
   socketConnection.emit("tweets", msg);
 };
 
+//Parse incoming request bodies in a middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//fetch data with this route
 app.use("/api/twitter", router);
 
+//path for the client side build
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {

@@ -1,3 +1,5 @@
+//3 types of sorting based on date, fav and retweets
+
 const sortMethods = {
   date: (a, b) => {
     return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
@@ -7,7 +9,7 @@ const sortMethods = {
   },
   retweet: (a, b) => {
     return b.retweet_count - a.retweet_count;
-  }
+  },
 };
 
 export default sortMethods;

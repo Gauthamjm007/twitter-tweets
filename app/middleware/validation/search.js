@@ -1,4 +1,4 @@
-
+//check if the user has given an input
 const isEmpty = (value) => {
   return (
     value === undefined ||
@@ -8,13 +8,13 @@ const isEmpty = (value) => {
   );
 };
 
+//search validation
+
 module.exports = function validateSearchInput(data) {
   let errors = {};
-
   if (isEmpty(data.hashtags)) {
     errors.hashtags = "You need to submit a minimum of one word to get feed";
   }
-
   return {
     errors,
     isValid: isEmpty(errors),

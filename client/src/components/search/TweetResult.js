@@ -3,9 +3,8 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import SearchBar from "./SearchBar";
 import TweetFeed from "./TweetFeed";
-import Spinner from "../common/Spinner";
-import TwitterList from "../NotificationHeader/TwitterList";
-import TwitterHeader from "../NotificationHeader/TwitterHeader";
+import TwitterList from "../notifications/NotificationsList";
+import TwitterHeader from "../notifications/NotificationHeader";
 class TweetResult extends Component {
   constructor() {
     super();
@@ -20,11 +19,13 @@ class TweetResult extends Component {
     const { tweets, loading, isSuccess } = this.props.search;
     let content;
     if (loading) {
-      content = <Spinner />;
-    } else if (tweets.length === 0 && isSuccess) {
       content = (
-        <div className="no-content">There is no tweet with those hashtags</div>
+        <div className="spinner-border text-primary" role="status">
+          <span className="sr-only">Please wait its Loading...</span>
+        </div>
       );
+    } else if (tweets.length === 0 && isSuccess) {
+      content = <div className="no-content">no feed found for that word</div>;
     } else if (tweets.length !== 0) {
       content = (
         <div>

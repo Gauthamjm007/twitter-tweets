@@ -1,4 +1,6 @@
-const isEmpty = value => {
+//selector to check if the search is empty or not
+
+const isEmpty = (value) => {
   return (
     value === undefined ||
     value === null ||

@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { sendQueryData, changeSort } from "../../actions/searchActions";
 import { setText, clearText } from "../../actions/textActions";
-import InputField from "../common/InputField";
-import isEmpty from "../../utils/is-empty";
+import InputField from "./InputField";
+import isEmpty from "../../selector/isEmpty";
 
 class SearchBar extends Component {
   constructor() {
@@ -56,7 +56,7 @@ class SearchBar extends Component {
     if (this.props.search.isSuccess) {
       content = (
         <h1>
-          Search result for Hashtags:{" "}
+          Tweets for{" "}
           {this.props.search.query.hashtags
             .split(" ")
             .map((item) => `#${item} `)}
@@ -79,15 +79,26 @@ class SearchBar extends Component {
           />
 
           <input type="submit" className="btn-search" value="Search" />
-          <div className="search-sort-select">
-            <label htmlFor="sort">Sort By: </label>
-            <select name="sort" onChange={this.onSortChange}>
-              {sortOptions.map((item, index) => (
-                <option key={index} value={item}>
-                  {item}
-                </option>
-              ))}
-            </select>
+          <div className="form-group">
+            <label
+              htmlFor="sort"
+              className="control-label col-sm-offset-2 col-sm-2"
+            >
+              Sort By:
+            </label>
+            <div class="col-sm-6 col-md-4">
+              <select
+                name="sort"
+                onChange={this.onSortChange}
+                className="form-control"
+              >
+                {sortOptions.map((item, index) => (
+                  <option key={index} value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </form>
         <div className="search-info">{content}</div>

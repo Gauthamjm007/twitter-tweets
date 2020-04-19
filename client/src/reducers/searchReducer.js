@@ -1,4 +1,4 @@
-import sortMethods from "../utils/sortMethods";
+import sortMethods from "../selector/sortMethods";
 
 const initialState = {
   query: {},

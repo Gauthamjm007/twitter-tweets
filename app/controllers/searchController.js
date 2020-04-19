@@ -9,7 +9,7 @@ const twitterClient = Twitter(twitterConfig);
 
 const validateSearchInput = require("../middleware/validation/search");
 
-//  POST api/twitters/search
+//   api/twitters/search
 module.exports.search = (req, res) => {
   const { errors, isValid } = validateSearchInput(req.body);
   if (!isValid) {
@@ -18,7 +18,7 @@ module.exports.search = (req, res) => {
   const hashtagQuery = req.body.hashtags.split(" ");
 
   const query = hashtagQuery.map((item) => "#" + item).join(" OR ");
-
+  //fetch 100 tweets of the given tweet
   twitterClient
     .get("/search/tweets.json", { q: query, count: 100 })
     .then((data) => {

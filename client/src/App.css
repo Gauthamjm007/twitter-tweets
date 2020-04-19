@@ -1,11 +1,3 @@
-footer {
-  display: block;
-  background-color: #1da1f2;
-  color: white;
-  height: 50px;
-  padding: 20px;
-}
-
 .app-navbar {
   background-color: #1da1f2;
   color: white;
@@ -31,9 +23,6 @@ footer {
   .app-navbar .title {
     font-size: 22px;
   }
-}
-img {
-  width: 100%;
 }
 
 input[type="text"] {
@@ -69,40 +58,10 @@ input[type="submit"]:hover {
   margin-top: 10px;
 }
 
-.landing .h2 {
-  margin-top: 50px;
-}
-
-.landing-search-input {
-  padding: 5px;
-  height: 70px;
-}
-
-.landing-hashtag {
-  width: 30%;
-  min-width: 250px;
-  margin: 0 auto;
-}
-.landing-count {
-  width: 12%;
-  min-width: 150px;
-  margin: 0 auto;
-}
-
-.landing-search-form {
-  position: relative;
-  margin: 0 auto;
-}
-
-.landing-count.is-invalid,
-.landing-hashtag.is-invalid {
-  border: 2px red;
-}
-
 .invalid-feedback {
   color: red;
 }
-/* SearchResult */
+
 .search-form-group {
   display: block;
   position: relative;
@@ -142,6 +101,7 @@ input[type="submit"]:hover {
   vertical-align: top;
   margin: 6px;
   margin-top: 9px;
+  box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.16);
 }
 
 .search-sort-select {
@@ -167,11 +127,6 @@ input[type="submit"]:hover {
   justify-items: start;
   padding: 20px;
   min-width: 400px;
-}
-
-twitterwidget {
-  position: relative;
-  margin: 0 auto;
 }
 
 .tweet {
