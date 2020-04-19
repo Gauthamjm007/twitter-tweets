@@ -1,7 +1,7 @@
 # Twitter Fetching Tweets
 
-![twitter]("twitter.gif")
-![twitter2]("twitter2.gif")
+![](twitter.gif)
+![](twitter2.gif)
 
 ## Table of Contents
 
