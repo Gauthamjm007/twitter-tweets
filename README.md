@@ -1,5 +1,8 @@
 # Twitter Fetching Tweets
 
+![twitter]("./twitter.gif)
+![twitter2]("./twitter2.gif)
+
 ## Table of Contents
 
 - [Solution for Record-Linkage](#twitter-fetching-tweets)
