@@ -1,9 +1,9 @@
 const Twitter = require("twitter");
 const twitterConfig = {
-  consumer_key: "KMCYVdToLMKSkTHcBrOGAm9RC",
-  consumer_secret: "y1JuQTmelZAUHlv7C1xTfte20pi7lJYQ5BhKXVjuLaziv4fi0u",
-  access_token_key: "875590021608230912-E33ZOxfjmiF8tN06SVt0GMGo41fYVPg",
-  access_token_secret: "ljY0MYzu6PZ2iiSal6Mc0qp73h0WG5U5YsSnes0sGpLZo",
+  consumer_key: process.env.consumer_key2,
+  consumer_secret: process.env.consumer_secret2,
+  access_token_key: process.env.access_token_key2,
+  access_token_secret: process.env.access_token_secret2,
 };
 const twitterClient = Twitter(twitterConfig);
 
@@ -18,9 +18,9 @@ module.exports.search = (req, res) => {
   const hashtagQuery = req.body.hashtags.split(" ");
 
   const query = hashtagQuery.map((item) => "#" + item).join(" OR ");
-  const count = parseInt(req.body.count);
+
   twitterClient
-    .get("/search/tweets.json", { q: query, count })
+    .get("/search/tweets.json", { q: query, count: 100 })
     .then((data) => {
       const resData = data.statuses.map((item) => {
         let favorite_count;
