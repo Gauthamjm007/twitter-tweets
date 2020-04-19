@@ -1,11 +1,12 @@
 # Twitter Fetching Tweets
 
+A Twitter App built for fetching user tweets <br/> to view it live click [here](https://twitter-tweets-goutham.herokuapp.com/)
 ![](twitter.gif)
 ![](twitter2.gif)
 
 ## Table of Contents
 
-- [Solution for Record-Linkage](#twitter-fetching-tweets)
+- [Twitter Fetching Tweets](#twitter-fetching-tweets)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
     - [Problem Statement](#problem-statement)
@@ -18,8 +19,6 @@
   - [Author](#author)
 
 ## Introduction
-
-A Twitter App built for fetching user tweets <br/> to view it live click [here](https://twitter-tweets-goutham.herokuapp.com/)
 
 **Tech Stack Used** : <br/>
 **Front End**:React,Redux,Bootstrap,Socket.io Client <br/>
