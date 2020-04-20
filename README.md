@@ -1,7 +1,7 @@
 # Twitter Fetching Tweets
 
-A Twitter App built for fetching user tweets <br/> to view it live click [here](https://twitter-tweets-goutham.herokuapp.com/)
-please add the twitter keys in ./server.js and ./app/controllers/searchController
+A Twitter App built for fetching user tweets <br/> to view it live click [here](https://twitter-tweets-goutham.herokuapp.com/)<br/>
+**please add the twitter keys in ./server.js and ./app/controllers/searchController**<br/>
 ![](twitter.gif)
 ![](twitter2.gif)
 
