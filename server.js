@@ -17,10 +17,10 @@ server.listen(port, () => {
 
 //set you twitter key here
 let twitter = new Twitter({
-  consumer_key: "KMCYVdToLMKSkTHcBrOGAm9RC",
-  consumer_secret: "y1JuQTmelZAUHlv7C1xTfte20pi7lJYQ5BhKXVjuLaziv4fi0u",
-  access_token_key: "875590021608230912-E33ZOxfjmiF8tN06SVt0GMGo41fYVPg",
-  access_token_secret: "ljY0MYzu6PZ2iiSal6Mc0qp73h0WG5U5YsSnes0sGpLZo",
+  consumer_key: process.env.consumer_key2,
+  consumer_secret:  process.env.consumer_secret2,
+  access_token_key: process.env.access_token_key2,
+  access_token_secret: process.env.access_token_secret2,
 });
 
 let socketConnection;
